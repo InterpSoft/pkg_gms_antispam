@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="captcha" method="upgrade">
+    <name>plg_captcha_gmsantispam</name>
+    <author>Dominik Graf</author>
+    <creationDate>Oktober 2024</creationDate>
+    <copyright>Copyright (C) 2024 Dominik Graf. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <authorEmail>joomla@grafmediasolutions.de</authorEmail>
+    <authorUrl>www.grafmediasolutions.de</authorUrl>
+    <version>1.0.1</version>
+    <description>PLG_CAPTCHA_GMSANTISPAM_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="gmsantispam">gmsantispam.php</filename>
+        <filename>gmsantispam.script.php</filename>
+        <folder>language</folder>
+    </files>
+    <languages folder="language">
+        <language tag="de-DE">de-DE/de-DE.plg_captcha_gmsantispam.ini</language>
+        <language tag="de-DE">de-DE/de-DE.plg_captcha_gmsantispam.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="min_time"
+                    type="number"
+                    label="PLG_CAPTCHA_GMSANTISPAM_MIN_TIME_LABEL"
+                    description="PLG_CAPTCHA_GMSANTISPAM_MIN_TIME_DESC"
+                    default="3"
+                    filter="integer"
+                    min="1"
+                    max="60"
+                />
+                <field
+                    name="enable_logging"
+                    type="radio"
+                    label="PLG_CAPTCHA_GMSANTISPAM_ENABLE_LOGGING_LABEL"
+                    description="PLG_CAPTCHA_GMSANTISPAM_ENABLE_LOGGING_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                    >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="log_max_size"
+                    type="number"
+                    label="PLG_CAPTCHA_GMSANTISPAM_LOG_MAX_SIZE_LABEL"
+                    description="PLG_CAPTCHA_GMSANTISPAM_LOG_MAX_SIZE_DESC"
+                    default="5"
+                    filter="integer"
+                    min="1"
+                    max="100"
+                />
+            </fieldset>
+        </fields>
+    </config>
+    <administration>
+        <menu>PLG_GMS_ANTISPAM</menu>
+        <files>
+            <filename>admin.gmsantispam.php</filename>
+            <folder>admin</folder>
+            <folder>controllers</folder>
+            <folder>models</folder>
+            <folder>views</folder>
+        </files>
+    </administration>
+    <install>
+        <scriptfile>gmsantispam.script.php</scriptfile>
+    </install>
+</extension>
