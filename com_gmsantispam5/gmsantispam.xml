@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="5.0" method="upgrade">
+
+    <!-- Name und Beschreibung der Komponente -->
+    <name>com_gmsantispam</name>
+    <creationDate>2023-02-20</creationDate>
+    <author>Dein Name</author>
+    <authorEmail>deine@emailadresse.tld</authorEmail>
+    <authorUrl>deine-website.tld</authorUrl>
+    <copyright>(C) 2023 Dein Name. Alle Rechte vorbehalten.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <description>COM_GMSANTISPAM_XML_DESCRIPTION</description>
+
+    <!-- Joomla-Kompatibilität -->
+    <compatible>5.0</compatible>
+
+    <!-- Komponenten-Dateien und -Verzeichnisse -->
+    <files>
+        <filename>gmsantispam.php</filename>
+        <!-- Weitere Dateien und Verzeichnisse hinzufügen, z.B.: -->
+        <folder>admin</folder>
+        <folder>api</folder>
+        <folder>forms</folder>
+        <folder>services</folder>
+    </files>
+
+    <!-- Verwaltungsbereich (Backend) -->
+    <administration>
+        <menu img="class:com_gmsantispam">COM_GMSANTISPAM_MENU</menu>
+        <!-- Weitere Menu-Einträge für den Verwaltungsbereich hinzufügen, z.B.: -->
+        <submenu>
+            <menu link="option=com_gmsantispam&view=logs" img="class:logs">COM_GMSANTISPAM_LOGS_MENU</menu>
+            <menu link="option=com_gmsantispam&view=statistics" img="class:statistics">COM_GMSANTISPAM_STATISTICS_MENU</menu>
+        </submenu>
+    </administration>
+
+    <!-- Sprachdateien -->
+    <languages folder="admin">
+        <language tag="en-GB">language/en-GB/en-GB.com_gmsantispam.ini</language>
+        <!-- Weitere Sprachdateien hinzufügen, z.B.: -->
+        <language tag="de-DE">language/de-DE/de-DE.com_gmsantispam.ini</language>
+    </languages>
+
+    <!-- Routen und API-Endpunkte -->
+    <routes>
+        <routes>
+            <route name="gmsantispam.logs" path="/gmsantispam/logs">
+                <controller>Logs</controller>
+                <view>logs</view>
+                <layout>default</layout>
+                <method>GET</method>
+            </route>
+        </routes>
+        <routes>
+            <route name="gmsantispam.statistics" path="/gmsantispam/statistics">
+                <controller>Statistics</controller>
+                <view>statistics</view>
+                <layout>default</layout>
+                <method>GET</method>
+            </route>
+        </routes>
+    </routes>
+
+</extension>
