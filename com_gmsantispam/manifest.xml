@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="5.0" method="upgrade">
+    <name>COM_GMSANTISPAM</name>
+    <version>1.0.0</version>
+    <description>COM_GMSANTISPAM_DESCRIPTION</description>
+    <administration>
+        <menu>COM_GMSANTISPAM_MENU</menu>
+        <files>
+            <filename>controller.php</filename>
+            <filename>gmsantispam.php</filename>
+            <folder>controllers</folder>
+            <folder>models</folder>
+            <folder>views</folder>
+        </files>
+    </administration>
+</extension>
